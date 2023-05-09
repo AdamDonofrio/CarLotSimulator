@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
@@ -20,17 +21,32 @@ namespace CarLotSimulator
 
             // year, make, model, engineNoise, honkNoise, isDriveable
 
-            var myCar = new Car(1989, "Ford", "Focus", "Rrrrrrrr", "Honk", true);
-            var rockCar = new Car(1763, "Flinestone", "Stone", "Pat Pat", "Crank", false);
-            var fireCar = new Car(4078, "Flamehose", "Wood", "Froom", "Flint", true);
+            var carList = new List<Car>();
 
-            myCar.MakeEgineNoise(myCar.EngineNoise);
+            var myCar = new Car(1989, "Ford", "Focus", "Rrrrrrrr", "Honk", true);
+        
+            carList.Add(myCar);
+            var rockCar = new Car(1763, "Flinestone", "Stone", "Pat Pat", "Crank", false);
+            
+            carList.Add(rockCar);
+            var fireCar = new Car(4078, "Flamehose", "Wood", "Froom", "Flint", true);
+            
+            carList.Add(fireCar);
+
+            for (int i = 0; i < carList.Count; i++)
+            {
+                carList[i].MakeEgineNoise(carList[i].EngineNoise);
+                carList[i].MakeHonkNoise(carList[i].HonkNoise);
+
+            }
+
+            /*myCar.MakeEgineNoise(myCar.EngineNoise);
             rockCar.MakeEgineNoise(rockCar.EngineNoise);
             fireCar.MakeEgineNoise(fireCar.EngineNoise);
 
             myCar.MakeHonkNoise(myCar.HonkNoise);
             rockCar.MakeHonkNoise(rockCar.HonkNoise);
-            fireCar.MakeHonkNoise(fireCar.HonkNoise);
+            fireCar.MakeHonkNoise(fireCar.HonkNoise);*/
 
             //*************BONUS*************//
 

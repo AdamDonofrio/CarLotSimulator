@@ -11,7 +11,7 @@ namespace CarLotSimulator
     {
         public Car()
         {
-
+            //NumberOfCars++;
         }
 
         //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
@@ -23,6 +23,8 @@ namespace CarLotSimulator
             EngineNoise = engineNoise;
             HonkNoise = honkNoise;
             IsDriveable = isDriveable;
+            NumberOfCars++;
+            Console.WriteLine($"Number of Cars: {Car.NumberOfCars}");
         }
 
         //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
@@ -44,6 +46,9 @@ namespace CarLotSimulator
         public string EngineNoise { get; set; }
         public string HonkNoise { get; set; }
         public bool IsDriveable { get; set; }
+
+
+        public static int NumberOfCars { get; set; }
 
     }
     
